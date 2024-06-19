@@ -12,6 +12,7 @@ import { throttlerConfig } from './configs/throttler.config';
 import { DatabaseModule } from './database/database.module';
 import { ThrottlerStorageModule } from './typeorm-throttler-storage/throttler-storage.module';
 import { WinstonWrapperModule } from './winston/winston.module';
+import { AdminModule } from './admin/admin.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { WinstonWrapperModule } from './winston/winston.module';
     DatabaseModule,
     ThrottlerStorageModule,
     WinstonWrapperModule,
+    AdminModule,
   ],
   controllers: [AppController],
   providers: [
