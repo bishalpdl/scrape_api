@@ -9,5 +9,6 @@ import { AdminEntity } from './entity/admin.entity';
   imports: [TypeOrmModule.forFeature([AdminEntity])],
   controllers: [AdminController],
   providers: [AdminService, AdminRepository],
+  exports: [AdminRepository],
 })
 export class AdminModule {}

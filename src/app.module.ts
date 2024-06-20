@@ -14,6 +14,7 @@ import { ThrottlerStorageModule } from './typeorm-throttler-storage/throttler-st
 import { WinstonWrapperModule } from './winston/winston.module';
 import { AdminModule } from './admin/admin.module';
 import { ProductModule } from './product/product.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { ProductModule } from './product/product.module';
     WinstonWrapperModule,
     AdminModule,
     ProductModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [

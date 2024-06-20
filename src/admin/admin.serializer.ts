@@ -1,6 +1,10 @@
 import { Exclude, Expose } from 'class-transformer';
 import { CustomBaseSerializer } from 'src/common/serializers/base.serializer';
 
+export enum AdminSerializerEnum {
+  IncludePassword = 'IncludePassword',
+}
+
 @Exclude()
 export class AdminSerializer extends CustomBaseSerializer {
   @Expose()
@@ -9,9 +13,11 @@ export class AdminSerializer extends CustomBaseSerializer {
   @Expose()
   email: string;
 
-  @Expose()
+  @Expose({ groups: [AdminSerializerEnum.IncludePassword] })
   password: string;
 
-  @Expose()
+  @Expose({
+    groups: [AdminSerializerEnum.IncludePassword],
+  })
   salt: string;
 }
