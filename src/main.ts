@@ -17,7 +17,7 @@ async function bootstrap() {
   app.setGlobalPrefix('api');
   app.enableVersioning({
     type: VersioningType.URI,
-    defaultVersion: '2',
+    defaultVersion: '1',
   });
 
   app.useLogger(app.get(WINSTON_MODULE_NEST_PROVIDER));

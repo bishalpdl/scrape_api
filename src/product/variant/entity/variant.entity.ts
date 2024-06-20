@@ -7,22 +7,22 @@ import { VariantEntriesEntity } from '../entries/entity/entries.entity';
 @Entity({
   name: EntityName.ProductVariant,
 })
-@Index('unique_variant', ['variantSlug'], { unique: true })
+@Index('unique_variant', ['variantId'], { unique: true })
 export class VariantEntity extends CustomBaseEntity {
   @Column()
   url: string;
 
   @Column()
-  variantSlug: string;
+  variantId: string;
 
-  @Column()
-  title: string;
+  // @Column()
+  // title: string;
 
-  @Column({ nullable: true })
-  description?: string;
+  // @Column({ nullable: true })
+  // description?: string;
 
-  @Column({ nullable: true })
-  price?: number;
+  // @Column({ nullable: true })
+  // price?: number;
 
   @ManyToOne(() => ProductEntity, (product) => product.variant)
   product: ProductEntity;

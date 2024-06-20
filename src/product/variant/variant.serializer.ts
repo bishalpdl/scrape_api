@@ -7,7 +7,7 @@ export class VariantSerializer extends CustomBaseSerializer {
   url: string;
 
   @Expose()
-  variantSlug: string;
+  variantId: string;
 
   @Expose()
   title: string;

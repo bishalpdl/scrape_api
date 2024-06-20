@@ -1,34 +1,9 @@
-import {
-  ApiProperty,
-  ApiPropertyOptional,
-  ApiResponseProperty,
-} from '@nestjs/swagger';
-import { IsOptional, IsString, IsUrl } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
+import { IsString } from 'class-validator';
+import { CreateVariantDto } from '../variant/dto/create.dto';
 
-export class PublicCreateProductDto {
+export class PublicCreateProductDto extends CreateVariantDto {
   @ApiProperty()
   @IsString()
   productSlug: string;
-
-  @ApiProperty()
-  @IsString()
-  @IsUrl()
-  url: string;
-
-  @ApiProperty()
-  @IsString()
-  variantId: string;
-
-  @ApiProperty()
-  @IsString()
-  title: string;
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  @IsString()
-  description: string;
-
-  @ApiPropertyOptional()
-  @IsOptional()
-  price: number;
 }
