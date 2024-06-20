@@ -13,6 +13,7 @@ import { DatabaseModule } from './database/database.module';
 import { ThrottlerStorageModule } from './typeorm-throttler-storage/throttler-storage.module';
 import { WinstonWrapperModule } from './winston/winston.module';
 import { AdminModule } from './admin/admin.module';
+import { ProductModule } from './product/product.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { AdminModule } from './admin/admin.module';
     ThrottlerStorageModule,
     WinstonWrapperModule,
     AdminModule,
+    ProductModule,
   ],
   controllers: [AppController],
   providers: [

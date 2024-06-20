@@ -4,7 +4,7 @@ import { generateHash } from 'src/common/helpers/functions/hashing';
 import { Column, Entity } from 'typeorm';
 
 @Entity({
-  name: EntityName.ADMIN,
+  name: EntityName.Admin,
 })
 export class AdminEntity extends CustomBaseEntity {
   @Column({
