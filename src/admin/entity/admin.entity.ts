@@ -7,21 +7,17 @@ import { Column, Entity } from 'typeorm';
   name: EntityName.Admin,
 })
 export class AdminEntity extends CustomBaseEntity {
-  @Column({
-    nullable: true,
-  })
-  name!: string;
+  @Column()
+  name: string;
 
-  @Column({
-    unique: true,
-  })
+  @Column()
   email: string;
 
   @Column()
-  password!: string;
+  password: string;
 
   @Column()
-  salt!: string;
+  salt: string;
 
   async verifyPassword(password: string): Promise<boolean> {
     const { hashedValue: hashedPassword } = await generateHash(
