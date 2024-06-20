@@ -11,6 +11,7 @@ import { join } from 'path';
 
         switch (configService.getOrThrow('nodeEnv')) {
           case 'testing':
+          case 'development':
             sslOptions = {
               ssl: {
                 ca: configService.getOrThrow('dbEnv.dbSsl'),
@@ -18,7 +19,6 @@ import { join } from 'path';
             };
           case 'production':
             break;
-          case 'development':
           default:
             break;
         }

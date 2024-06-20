@@ -8,10 +8,7 @@ export const dbEnvsSchema = {
   DB_PASSWORD: Joi.string().required(),
   DB_NAME: Joi.string().required(),
   DB_SYNCHRONIZE: Joi.boolean().required(),
-  DB_SSL:
-    process.env['NODE_ENV'] == 'development'
-      ? () => Joi.allow('').optional()
-      : () => Joi.string().required(),
+  DB_SSL: Joi.string().required(),
 };
 
 export const dbEnvs = registerAs('dbEnv', () => {
