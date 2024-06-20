@@ -5,4 +5,6 @@ export enum EntityName {
   Product = 'product',
   ProductVariant = 'product_variant',
   ProductVariantEntries = 'product_variant_entries',
+
+  Image = 'image',
 }
