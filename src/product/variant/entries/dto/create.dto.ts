@@ -6,6 +6,7 @@ export class CreateEntriesDto {
   @ApiProperty()
   @IsString()
   title: string;
+
   @ApiPropertyOptional()
   @IsOptional()
   @IsString()
