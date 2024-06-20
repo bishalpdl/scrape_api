@@ -15,15 +15,6 @@ export class VariantEntity extends CustomBaseEntity {
   @Column()
   variantId: string;
 
-  // @Column()
-  // title: string;
-
-  // @Column({ nullable: true })
-  // description?: string;
-
-  // @Column({ nullable: true })
-  // price?: number;
-
   @ManyToOne(() => ProductEntity, (product) => product.variant)
   product: ProductEntity;
 

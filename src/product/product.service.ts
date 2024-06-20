@@ -1,5 +1,10 @@
 import { Injectable } from '@nestjs/common';
+import {
+  PaginationOptions,
+  PaginationQuery,
+} from 'src/common/@types/interfaces/pagination.interface';
 import { PublicCreateProductDto } from './dto/public-create.dto';
+import { ProductEntity } from './entity/product.entity';
 import { ProductRepository } from './product.repository';
 import { VariantService } from './variant/variant.service';
 
@@ -29,8 +34,18 @@ export class ProductService {
 
   async create(createDto: PublicCreateProductDto) {
     const { productSlug, ...variantData } = createDto;
-    await this.retrieveOrCreate(productSlug);
+    const product = await this.retrieveOrCreate(productSlug);
 
-    await this.variantService.createVariant(variantData);
+    await this.variantService.createVariant(product.id, variantData);
+  }
+
+  async pagination(pageQuery: PaginationQuery) {
+    const query: PaginationOptions<ProductEntity> = {
+      ...pageQuery,
+      relations: {
+        variant: true,
+      },
+    };
+    return this.productRepository.pagination(query);
   }
 }

@@ -1,6 +1,6 @@
 import { EntityName } from 'src/common/@types/enums/entity-name.enums';
 import { CustomBaseEntity } from 'src/common/entity/base.entity';
-import { Column, Entity, JoinColumn, ManyToMany, ManyToOne } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
 import { VariantEntity } from '../../entity/variant.entity';
 
 @Entity({
@@ -20,6 +20,6 @@ export class VariantEntriesEntity extends CustomBaseEntity {
   @JoinColumn({ name: 'previousEntryId' })
   samePreviousEntry: VariantEntriesEntity;
 
-  @ManyToMany(() => VariantEntity, (variant) => variant.entries)
+  @ManyToOne(() => VariantEntity, (variant) => variant.entries)
   variant: VariantEntity;
 }

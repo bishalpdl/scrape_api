@@ -24,6 +24,9 @@ export class EntriesService {
           samePreviousEntry: {
             id: similar.id,
           },
+          variant: {
+            id: variantId,
+          },
         }),
       );
     }
