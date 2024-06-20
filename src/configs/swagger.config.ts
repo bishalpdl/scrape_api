@@ -1,8 +1,8 @@
 import { DocumentBuilder, SwaggerCustomOptions } from '@nestjs/swagger';
 
 export const swaggerConfigs = new DocumentBuilder()
-  .setTitle('Enimran v2 API')
-  .setDescription('Enirman v2 API Documentation')
+  .setTitle('Scrapping')
+  .setDescription('API Documentation')
   .setVersion('2.0')
   .addTag('API List:')
   .addSecurity('Bearer', {
@@ -17,5 +17,5 @@ export const swaggerOptions: SwaggerCustomOptions = {
   swaggerOptions: {
     persistAuthorization: true,
   },
-  customSiteTitle: 'Enirman v2 API Documentation',
+  customSiteTitle: 'Scraping api docs.',
 };
